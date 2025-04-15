@@ -5,7 +5,7 @@ import { useNavigate } from "react-router-dom";
 import styles from './signup-form.module.css'
 
 export const SignupForm = () => {
-  const [email, setEmail] = useState("");
+  const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
   const [error, setError] = useState<string | null>(null);
@@ -22,8 +22,8 @@ export const SignupForm = () => {
     }
 
     try {
-      const data = await register(email, password);
-      setUser(data.email, data.accessToken);
+      const data = await register(username, password);
+      setUser(data.username, data.accessToken);
       navigate("/dashboard");
     } catch (err) {
       setError("Ошибка при регистрации. Попробуйте снова.");
@@ -34,10 +34,10 @@ export const SignupForm = () => {
     <form onSubmit={handleSubmit} className={styles.form}>
       {error && <div className={styles.error}>{error}</div>}
       <input
-        type="email"
-        placeholder="Email"
-        value={email}
-        onChange={(e) => setEmail(e.target.value)}
+        type="text"
+        placeholder="Логин"
+        value={username}
+        onChange={(e) => setUsername(e.target.value)}
         className={styles.input}
         required
       />

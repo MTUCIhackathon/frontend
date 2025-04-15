@@ -5,7 +5,7 @@ import { useNavigate } from "react-router-dom";
 import styles from "./login-form.module.css"
 
 export const LoginForm = () => {
-  const [email, setEmail] = useState("");
+  const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState<string | null>(null);
   const { setUser } = useUserStore();
@@ -16,8 +16,8 @@ export const LoginForm = () => {
     setError(null);
 
     try {
-      const data = await login(email, password);
-      setUser(data.email, data.accessToken);
+      const data = await login(username, password);
+      setUser(data.username, data.accessToken);
       // navigate("/dashboard");
     } catch (err) {
       setError("Неверные данные для входа");
@@ -28,10 +28,10 @@ export const LoginForm = () => {
     <form onSubmit={handleSubmit} className={styles.form}>
       {error && <div className={styles.error}>{error}</div>}
       <input
-        type="email"
-        placeholder="Email"
-        value={email}
-        onChange={(e) => setEmail(e.target.value)}
+        type="text"
+        placeholder="Логин"
+        value={username}
+        onChange={(e) => setUsername(e.target.value)}
         className={styles.input}
         required
       />
