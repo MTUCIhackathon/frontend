@@ -17,9 +17,9 @@ export const LoginForm = () => {
 
     try {
       const data = await login(username, password);
-      console.log('data fom login', data)
-      
-      setUser(data["access_token"], data["refresh_token"]);
+      console.log("💬 Login Response:", data);
+      setUser(data["access_token"], data["refresh_token"]);  // записываем в Zustand
+      console.log("🟢 Access token set:", data["access_token"]);
       // navigate("/dashboard");
     } catch (err) {
       setError("Неверные данные для входа");

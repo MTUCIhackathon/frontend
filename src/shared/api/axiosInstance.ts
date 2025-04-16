@@ -11,7 +11,7 @@ const api = axios.create({
 api.interceptors.request.use(
   (config) => {
     const { accessToken } = useUserStore.getState();
-    console.log(accessToken)
+    console.log("🟡 accessToken после setUser", accessToken);
     if (accessToken) {
       // если headers ещё нет, инициализируем пустой объект (каст к any чтобы избежать ошибок типов)
       if (!config.headers) {

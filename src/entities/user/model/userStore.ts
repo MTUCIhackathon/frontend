@@ -12,7 +12,7 @@ export const useUserStore = create<UserState>((set) => ({
   accessToken: null,
   refreshToken: null,
   setUser: (accessToken, refreshToken) =>{
-    console.log("setting user", accessToken, refreshToken);
+    console.log("🟢 Setting token:", accessToken);
     set({ accessToken, refreshToken }) },
   clearUser: () => set({ accessToken: null, refreshToken: null }),
 }));
