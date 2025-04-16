@@ -4,7 +4,7 @@ import { create } from "zustand";
 interface UserState {
   accessToken: string | null;
   refreshToken: string | null;
-  setUser: (email: string, accessToken: string) => void;
+  setUser: (accessToken: string, refreshToken: string) => void;
   clearUser: () => void;
 }
 

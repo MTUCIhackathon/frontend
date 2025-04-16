@@ -4,6 +4,7 @@ import { API_PATHS } from "./apiConfig";
 
 export const login = async (login: string, password: string) => {
   const response = await api.post(API_PATHS.login, { login, password });
+  console.log(response)
   return response.data; // { email, accessToken }
 };
 
@@ -16,5 +17,6 @@ export const register = async (login: string, password: string) => {
 // src/features/auth/api/getMe.ts
 export const getMe = async () => {
   const response = await api.get(API_PATHS.me);
+  console.log(response)
   return response.data; // { email, accessToken }
 };
