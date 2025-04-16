@@ -17,6 +17,8 @@ export const LoginForm = () => {
 
     try {
       const data = await login(username, password);
+      console.log('data fom login', data)
+      
       setUser(data["access_token"], data["refresh_token"]);
       // navigate("/dashboard");
     } catch (err) {
