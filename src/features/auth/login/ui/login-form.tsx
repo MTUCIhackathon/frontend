@@ -17,7 +17,7 @@ export const LoginForm = () => {
 
     try {
       const data = await login(username, password);
-      setUser(data["access-token"], data["refresh-token"]);
+      setUser(data["access_token"], data["refresh_token"]);
       // navigate("/dashboard");
     } catch (err) {
       setError("Неверные данные для входа");
