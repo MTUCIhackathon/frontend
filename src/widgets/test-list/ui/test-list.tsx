@@ -3,7 +3,7 @@ import React, { useEffect, useState } from "react";
 import { Test } from "../../../entities/test/card-test/model";
 import { TestCard } from "../../../entities/test/card-test/card-test";
 import { fetchAllTests } from "../model/api/api";
-import styles from './test-list.module.css'
+import styles from './test-list.module.css';
 
 const TestList: React.FC = () => {
   const [tests, setTests] = useState<Test[]>([]);
