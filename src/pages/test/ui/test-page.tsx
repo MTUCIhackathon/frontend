@@ -22,7 +22,7 @@ export const TestPage = () => {
   useEffect(() => {
     const fetchTest = async () => {
       try {
-        const res = await api.get(`/api/test/${id}`);
+        const res = await api.get(`/api/tests/${id}`);
         setTest(res.data);
       } catch (err) {
         console.error("Ошибка при загрузке теста", err);
