@@ -23,8 +23,8 @@ export const SignupForm = () => {
 
     try {
       const data = await register(username, password);
-      setUser(data["access-token"], data["refresh-token"]);
-      navigate("/dashboard");
+      setUser(data["access_token"], data["refresh_token"]);
+      navigate("/");
     } catch (err) {
       setError("Ошибка при регистрации. Попробуйте снова.");
     }
