@@ -1,0 +1,15 @@
+.loading {
+  font-size: 1.2rem;
+  font-weight: 500;
+  color: #666;
+  text-align: center;
+}
+
+.list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+  width: 100%;
+  max-width: 1000px;
+  padding: 0 1rem;
+}

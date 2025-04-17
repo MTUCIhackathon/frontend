@@ -1,0 +1,94 @@
+.wrapper {
+  font-family: 'Nunito', sans-serif;
+  padding: 2rem;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.title {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: #333;
+  margin-bottom: 1rem;
+}
+
+.description {
+  font-size: 1rem;
+  margin-bottom: 2rem;
+  color: #666;
+}
+
+.questionBlock {
+  margin-bottom: 2rem;
+  padding: 1rem;
+  border-radius: 12px;
+  background-color: #f9f9f9;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+}
+
+.questionText {
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+.answers {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.radioLabel {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-weight: 500;
+  color: #333;
+}
+
+.radioLabel input[type="radio"] {
+  accent-color: #A64ACA; /* фиолетовый акцент */
+}
+
+.submitButton {
+  background-color: #A64ACA;
+  color: white;
+  font-weight: 600;
+  font-size: 1rem;
+  padding: 0.75rem 2rem;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  margin-top: 2rem;
+  transition: background-color 0.3s ease;
+}
+
+.submitButton:hover {
+  background-color: #8d3aa7;
+}
+
+.resultBlock {
+  margin-top: 2rem;
+  text-align: center;
+}
+
+.resultTitle {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #333;
+  margin-bottom: 1rem;
+}
+
+.resultImage {
+  max-width: 100%;
+  border-radius: 12px;
+  margin-bottom: 1rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.professionList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  font-weight: 500;
+  color: #555;
+}
