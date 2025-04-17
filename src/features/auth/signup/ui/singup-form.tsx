@@ -2,7 +2,7 @@ import { useState } from "react";
 import { register } from "../../../../shared/api/login";
 import { useUserStore } from "../../../../entities/user";
 import { useNavigate } from "react-router-dom";
-import styles from './signup-form.module.css'
+import styles from './signup-form.module.css';
 
 export const SignupForm = () => {
   const [username, setUsername] = useState("");
@@ -25,8 +25,12 @@ export const SignupForm = () => {
       const data = await register(username, password);
       setUser(data["access_token"], data["refresh_token"]);
       navigate("/");
-    } catch (err) {
-      setError("Ошибка при регистрации. Попробуйте снова.");
+    } catch (err: any) {
+      if (err.response?.status === 409) {
+        setError("Пользователь с таким логином уже существует");
+      } else {
+        setError("Ошибка при регистрации. Попробуйте снова.");
+      }
     }
   };
 

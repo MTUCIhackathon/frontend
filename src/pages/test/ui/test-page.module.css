@@ -53,6 +53,7 @@
   background-color: #A64ACA;
   color: white;
   font-weight: 600;
+  width: 100%;
   font-size: 1rem;
   padding: 0.75rem 2rem;
   border: none;
@@ -88,7 +89,66 @@
 .professionList {
   list-style: none;
   padding: 0;
-  margin: 0;
-  font-weight: 500;
-  color: #555;
+  margin: 20px 0;
 }
+
+.professionList li {
+  font-size: 1.25rem;
+  color: #8e44ad; 
+  font-weight: 500;
+  margin-bottom: 8px;
+}
+
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.modalContent {
+  background-color: white;
+  padding: 2rem;
+  border-radius: 12px;
+  max-width: 400px;
+  width: 100%;
+  text-align: center;
+}
+
+.closeButton {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+.emailInput {
+  width: 100%;
+  padding: 0.75rem;
+  margin-bottom: 1rem;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+}
+
+.spinnerWrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 80vh;
+}
+
+.spinner {
+  width: 48px;
+  height: 48px;
+  border: 5px solid #e0d1eb;
+  border-top: 5px solid #A64ACA;
+  border-radius: 50%;
+}
+
+

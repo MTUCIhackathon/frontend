@@ -1,24 +1,34 @@
+/* src/entities/test/ui/card-test.module.css */
 .card {
-  background-color: white;
   border-radius: 16px;
+  background-color: white;
   padding: 1.5rem;
   box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
   font-family: 'Nunito', sans-serif;
-  transition: transform 0.3s ease;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+  color: black;
 }
 
 .card:hover {
   transform: translateY(-4px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
 }
 
-.cardTitle {
-  font-size: 1.2rem;
-  font-weight: 600;
-  color: #333;
-  margin-bottom: 0.5rem;
+.title {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: #A64ACA;
+  margin-bottom: 0.75rem;
 }
 
-.cardDescription {
+.description {
   font-size: 1rem;
-  color: #555;
+  color: black;
+  margin-bottom: 0.75rem;
+}
+
+.questionsCount {
+  font-size: 0.9rem;
+  color: black;
 }

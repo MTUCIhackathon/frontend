@@ -7,13 +7,10 @@ const api = axios.create({
   withCredentials: true,
 });
 
-// Request interceptor: автоматически добавляем Authorization header
 api.interceptors.request.use(
   (config) => {
     const { accessToken } = useUserStore.getState();
-    console.log("🟡 accessToken после setUser", accessToken);
     if (accessToken) {
-      // если headers ещё нет, инициализируем пустой объект (каст к any чтобы избежать ошибок типов)
       if (!config.headers) {
         config.headers = {} as any;
       }
@@ -24,7 +21,6 @@ api.interceptors.request.use(
   (error) => Promise.reject(error)
 );
 
-// Response interceptor: обработка 401 и refresh токена
 api.interceptors.response.use(
   (res) => res,
   async (error) => {
@@ -39,8 +35,7 @@ api.interceptors.response.use(
 
         const { setUser } = useUserStore.getState();
         setUser(accessToken, refreshToken);
-
-        // если в оригинальном запросе нет headers, инициализируем
+        
         if (!originalRequest.headers) {
           originalRequest.headers = {} as any;
         }
@@ -50,6 +45,9 @@ api.interceptors.response.use(
       } catch (err) {
         const { clearUser } = useUserStore.getState();
         clearUser();
+
+        // Перенаправление на страницу авторизации
+        window.location.href = '/auth';
       }
     }
 
