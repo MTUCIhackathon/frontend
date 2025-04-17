@@ -53,12 +53,14 @@ export const TestPage = () => {
 
   const handleSubmit = async () => {
     if (!test) return;
-
+    console.log(test.name)
     setLoading(true);
 
     try {
+      
       const resolvedResponse = await api.post("/api/resolved/create", {
-        test_type: "second_order_test",
+        
+        test_type: test.name == "Тип личности" ?  "second_order_test" :  "first_order_test",
         questions: test.questions.map((q) => ({
           question_order: q.order,
           question: q.question,
@@ -70,8 +72,9 @@ export const TestPage = () => {
       const scoredQuestions = resolvedResponse.data.questions;
 
       const resultResponse = await api.post("/api/results/create", {
+        
         resolved_id: resolvedId,
-        test_type: "second_order_test",
+        test_type: test.name == "Тип личности" ?  "second_order_test" :  "first_order_test",
         questions: scoredQuestions.map((q: any) => ({
           question_order: q.question_order,
           mark: q.mark,

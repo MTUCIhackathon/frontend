@@ -4,6 +4,7 @@ import { Test } from "../../../entities/test/card-test/model";
 import { TestCard } from "../../../entities/test/card-test/card-test";
 import { fetchAllTests } from "../model/api/api";
 import styles from './test-list.module.css';
+import { AITestCard } from "../../../entities/test/ai-test/ui/ai-test";
 
 const TestList: React.FC = () => {
   const [tests, setTests] = useState<Test[]>([]);
@@ -25,11 +26,16 @@ const TestList: React.FC = () => {
   if (loading) return <div className={styles.loading}>Загрузка тестов...</div>;
 
   return (
+    <>
     <div className={styles.list}>
-      {tests.map((test) => (
-        <TestCard key={test.id} test={test} />
-      ))}
-    </div>
+  {tests.map((test) => (
+    <TestCard key={test.id} test={test} />
+  ))}
+  <div className={styles.fullWidthCard}>
+    <AITestCard />
+  </div>
+</div>
+    </>
   );
 };
 
